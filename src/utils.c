@@ -28,6 +28,8 @@ int cmp_timespec(struct timespec t1, struct timespec t2){
     if(t1.tv_nsec < t2.tv_nsec){
         return -1;
     }
+
+    return 0;
 }
 
 long diff_ms(struct timespec start, struct timespec end){
