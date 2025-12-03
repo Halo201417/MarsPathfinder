@@ -8,7 +8,7 @@ void add_ms(struct timespec *ts, long ms){
 
     while(ts->tv_nsec >= 1000000000){
         ts->tv_nsec -= 1000000000;
-        ts->tv_nsec++;
+        ts->tv_sec++;
     }
 }
 

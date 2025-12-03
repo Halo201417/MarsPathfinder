@@ -1,0 +1,17 @@
+RT Project
+Requiered to be executed with sudo
+
+SUCCESS: All tasks forced to run on CPU 0
+SUCCESS: Main thread priority elevated to 99
+Mode: [EXPECTED FAILURE] Classical Priority Reversal
+-----------------------------------------------------------
+[LOW] Starting. Trying to obtain Mutex...
+[LOW] Mutex BLOCK. Working on critical section (500ms)...
+[HIGH] Starting. I need the Mutex URGENT...
+[MED] Starting. I AM THE INTERFERENCE. Burning CPU (2000ms)...
+[MED] Finished.
+[LOW] Releasing Mutex.
+[HIGH] I finally obtain the Mutex (Fast critical section)
+[HIGH] Finished.
+[LOW] Finished.
+Experiment finalized

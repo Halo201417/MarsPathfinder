@@ -4,12 +4,34 @@
 #include <string.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <sched.h>
+#include <sys/types.h>
 #include "../include/task.h"
 
 int main(int argc, char *argv[]){
 
     printf("RT Project\n");
     printf("Requiered to be executed with sudo\n\n");
+
+    cpu_set_t my_set;
+    CPU_ZERO(&my_set);
+    CPU_SET(0, &my_set);
+
+    if(sched_setaffinity(getpid(), sizeof(cpu_set_t), &my_set) == -1){
+        perror("Error setting CPU affinity");
+        return 1;
+    }
+    printf("SUCCESS: All tasks forced to run on CPU 0\n");
+
+    struct sched_param main_param;
+    
+    main_param.sched_priority = 99;
+    if(pthread_setschedparam(pthread_self(), SCHED_FIFO, &main_param) != 0){
+        perror("Error setting Main priority ('sudo' required)");
+        return 1;
+    }
+
+    printf("SUCCESS: Main thread priority elevated to 99\n");
 
     int enable_fix = 0;
     if (argc > 1 && strcmp(argv[1], "fix") == 0){
