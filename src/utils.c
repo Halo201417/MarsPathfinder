@@ -51,3 +51,25 @@ void burn_cpu(long ms){
         clock_gettime(CLOCK_MONOTONIC, &current);
     }while(cmp_timespec(current, end) < 0);
 }
+
+void visual_burn_cpu(long ms, const char* color, const char* symbol){
+    struct timespec start, current, end, next_tick;
+    clock_gettime(CLOCK_MONOTONIC, &start);
+
+    end = start;
+    add_ms(&end, ms);
+
+    next_tick = start;
+    add_ms(&next_tick, 100);
+
+    do{
+        clock_gettime(CLOCK_MONOTONIC, &current);
+
+        if(cmp_timespec(current, next_tick) >= 0){
+            printf("%s%s\033[0m", color, symbol);
+            fflush(stdout);
+            add_ms(&next_tick, 100);
+        }
+    }while(cmp_timespec(current, end) < 0);
+    printf("\n");
+}
