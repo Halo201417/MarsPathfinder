@@ -1,13 +1,13 @@
 <h1 align="center">Mars Pathfinder Priority Inversion ��</h1>
 
 <p align="center">
-  <a href="https://github.com/Halo201417/MarsPathfinder/stargazers">
-    <img src="https://img.shields.io/github/stars/Halo201417/MarsPathfinder.svg?colorA=363a4f&colorB=b7bdf8&style=for-the-badge&v=1" alt="Stars">
+  <a href="https://github.com/Halo201417/marspathfinder/stargazers">
+    <img src="https://img.shields.io/github/stars/Halo201417/marspathfinder.svg?colorA=363a4f&colorB=b7bdf8&style=for-the-badge&v=1" alt="Stars">
   </a>
   <a href="https://github.com/Halo201417/MarsPathfinder/issues">
     <img src="https://img.shields.io/github/issues/Halo201417/MarsPathfinder.svg?colorA=363a4f&colorB=f5a97f&style=for-the-badge&v=1" alt="Issues">
   </a>
-  <a href="https://github.com/Halo201417/MarsPathfinder/blob/main/LICENSE">
+  <a href="https://github.com/Halo201417/marspathfinder/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Halo201417/MarsPathfinder.svg?colorA=363a4f&colorB=a6da95&style=for-the-badge&v=1" alt="License">
   </a>
 </p>
