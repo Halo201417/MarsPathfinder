@@ -2,6 +2,11 @@ import matplotlib.pyplot as plt
 import re
 
 def parse_log(filename):
+    """
+    Parses the execution log file to extract task execution times
+    :param filename: Path of the log file the parse
+    :return: List of tuples formatted as (Task_Name, Start_time, End_time)
+    """
     events = []
     
     tasks = {'LOW': 0, 'MED': 1, 'HIGH': 2}
@@ -39,6 +44,13 @@ def parse_log(filename):
     return data
 
 def plot_gantt(data, title, output_file):
+    """
+    Generates, formats, and saves a Gantt Chart using matplotlib
+    
+    :param data: List of tuples with the execution blocks
+    :param title: Top title to be displayed on the graph
+    :param output_file: Name and path of the resulting image file
+    """
     fig, ax = plt.subplots(figsize=(10, 3))
     
     y_labels = ['LOW', 'MED', 'HIGH']
@@ -61,6 +73,7 @@ def plot_gantt(data, title, output_file):
     plt.savefig(output_file)
     print(f"Graph saved in {output_file}")
     
+# Static data for the Priority Inversion scenario
 data_fail = [
     ('LOW', 0, 100),
     ('MED', 100, 2100),
@@ -68,6 +81,7 @@ data_fail = [
     ('HIGH', 2500, 2600)
 ]
 
+# Static data for the Priority Inheritance
 data_fix = [
     ('LOW', 0, 500),
     ('HIGH', 500, 600),
