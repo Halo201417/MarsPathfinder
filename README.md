@@ -59,6 +59,7 @@ This project simulates real-time operating system task scheduling and requires s
 ```bash
 git clone https://github.com/Halo201417/MarsPathfinder.git
 cd ./MarsPathfinder
+mkdir ./bin
 ```
 
 ### 2. Compile the C Project
